@@ -12,7 +12,6 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-MVC.ShiftLogger-ea809f60-6f5a-4b19-a4e7-7c0a450d5353")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MVC.ShiftLogger")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

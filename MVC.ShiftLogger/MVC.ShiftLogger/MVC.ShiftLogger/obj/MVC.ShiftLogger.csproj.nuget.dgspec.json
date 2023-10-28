@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Salvi\\Downloads\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger.csproj": {}
+    "C:\\Users\\S\\Downloads\\Mvc ShiftLogger with auth\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Salvi\\Downloads\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger.csproj": {
+    "C:\\Users\\S\\Downloads\\Mvc ShiftLogger with auth\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Salvi\\Downloads\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger.csproj",
+        "projectUniqueName": "C:\\Users\\S\\Downloads\\Mvc ShiftLogger with auth\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger.csproj",
         "projectName": "MVC.ShiftLogger",
-        "projectPath": "C:\\Users\\Salvi\\Downloads\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger.csproj",
-        "packagesPath": "C:\\Users\\Salvi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Salvi\\Downloads\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger\\obj\\",
+        "projectPath": "C:\\Users\\S\\Downloads\\Mvc ShiftLogger with auth\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger.csproj",
+        "packagesPath": "C:\\Users\\S\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\S\\Downloads\\Mvc ShiftLogger with auth\\MVC.ShiftLogger\\MVC.ShiftLogger\\MVC.ShiftLogger\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Salvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\S\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,23 +46,33 @@
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.19, )"
+              "version": "[6.0.24, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.19, )"
+              "version": "[6.0.23, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[6.0.19, )"
+              "version": "[6.0.23, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.19, )"
+              "version": "[6.0.23, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.23, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.19, )"
+              "version": "[6.0.23, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.16, )"
             }
           },
           "imports": [
@@ -81,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
