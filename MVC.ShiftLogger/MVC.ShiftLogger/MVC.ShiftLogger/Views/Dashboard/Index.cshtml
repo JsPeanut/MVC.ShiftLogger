@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MVC.ShiftLogger.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@model MVC.ShiftLogger.Models.ViewModel.DashboardViewModel
+@{
+}
+
+<div class="cards">
+@foreach (var employee in Model.Employees)
+{
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@employee.UserName</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Employee", new { id = employee.Id })'"></a>
+        </div>
+    </div>
+}
+</div>
+

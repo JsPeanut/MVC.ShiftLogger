@@ -570,3 +570,7 @@ C:\Users\S\Downloads\Mvc ShiftLogger with auth\MVC.ShiftLogger\MVC.ShiftLogger\M
 C:\Users\S\Downloads\Mvc ShiftLogger with auth\MVC.ShiftLogger\MVC.ShiftLogger\MVC.ShiftLogger\obj\Debug\net6.0\MVC.ShiftLogger.pdb
 C:\Users\S\Downloads\Mvc ShiftLogger with auth\MVC.ShiftLogger\MVC.ShiftLogger\MVC.ShiftLogger\obj\Debug\net6.0\MVC.ShiftLogger.genruntimeconfig.cache
 C:\Users\S\Downloads\Mvc ShiftLogger with auth\MVC.ShiftLogger\MVC.ShiftLogger\MVC.ShiftLogger\obj\Debug\net6.0\ref\MVC.ShiftLogger.dll
+C:\Users\S\Downloads\Mvc ShiftLogger with auth\MVC.ShiftLogger\MVC.ShiftLogger\MVC.ShiftLogger\bin\Debug\net6.0\RestSharp.dll
+C:\Users\S\Downloads\Mvc ShiftLogger with auth\MVC.ShiftLogger\MVC.ShiftLogger\MVC.ShiftLogger\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\S\Downloads\Mvc ShiftLogger with auth\MVC.ShiftLogger\MVC.ShiftLogger\MVC.ShiftLogger\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\S\Downloads\Mvc ShiftLogger with auth\MVC.ShiftLogger\MVC.ShiftLogger\MVC.ShiftLogger\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

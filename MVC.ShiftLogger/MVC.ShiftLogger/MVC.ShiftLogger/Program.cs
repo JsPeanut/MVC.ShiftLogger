@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MVC.ShiftLogger.Data;
+using MVC.ShiftLogger.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +13,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => 
+{ 
+    options.SignIn.RequireConfirmedAccount = true;
+    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+/ ";
+})
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<ShiftService, ShiftService>();
+builder.Services.AddTransient<EmployeeService, EmployeeService>();
 
 var app = builder.Build();
 
@@ -64,21 +72,40 @@ using (var scope = app.Services.CreateScope())
 
 using (var scope = app.Services.CreateScope())
 {
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
-    string username = "El_Admin";
-    string email = "admin@admin.com";
-    string password = "Admin123!";
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    string adminUsername = "El_Admin";
+    string adminEmail = "admin@admin.com";
+    string adminPassword = "Admin123!";
+    string managerUsername = "El_Manager";
+    string managerEmail = "manager@manager.com";
+    string managerPassword = "Manager123!";
 
-    if (await userManager.FindByEmailAsync(email) == null)
+    if (await userManager.FindByEmailAsync(adminEmail) == null)
     {
-        var user = new IdentityUser();
-        user.UserName = username;
-        user.Email = email;
-        user.EmailConfirmed = true;
+        var adminUser = new ApplicationUser();
+        adminUser.UserName = adminUsername;
+        adminUser.Email = adminEmail;
+        adminUser.EmailConfirmed = true;
+        adminUser.FirstName = "El";
+        adminUser.LastName = "Admin";
 
-        await userManager.CreateAsync(user, password);
+        await userManager.CreateAsync(adminUser, adminPassword);
 
-        await userManager.AddToRoleAsync(user, "Admin");
+        await userManager.AddToRoleAsync(adminUser, "Admin");
+    }
+
+    if (await userManager.FindByEmailAsync(managerEmail) == null)
+    {
+        var managerUser = new ApplicationUser();
+        managerUser.UserName = managerUsername;
+        managerUser.Email = managerEmail;
+        managerUser.EmailConfirmed = true;
+        managerUser.FirstName = "El";
+        managerUser.LastName = "Manager";
+
+        await userManager.CreateAsync(managerUser, managerPassword);
+
+        await userManager.AddToRoleAsync(managerUser, "Manager");
     }
 }
 

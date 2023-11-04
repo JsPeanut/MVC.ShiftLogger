@@ -1,0 +1,87 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MVC.ShiftLogger.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@model MVC.ShiftLogger.Models.ViewModel.ShiftViewModel
+@{
+    var username = User.Identity.Name;
+    var user = UserManager.FindByNameAsync(username).Result;
+
+}
+<a button type="button" class="btn btn-success" data-toggle="modal" data-target="addShiftModal" onclick="showAddShiftModal()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+    </svg>
+    New shift
+</a>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+@foreach (var shift in Model.Shifts)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Start datetime</th>
+                <th>End datetime</th>
+                <th>Worked time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @shift.StartTime;
+                </td>
+                <td>
+                    @shift.EndTime;
+                </td>
+                <td>
+                    @shift.WorkedTime;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+<div class="modal fade" id="addShiftModal" tabindex="-1" role="dialog" aria-labelledby="addShiftModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addShiftModalLabel">Add a new transaction</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="AddShift" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label>Start datetime</label>
+                        <input type="datetime-local" placeholder="Date" asp-for="Shift.StartTime">
+                        <span asp-validation-for="Shift.StartTime" class="text-danger"></span>
+                        <br />
+                        <label>End datetime</label>
+                        <input type="datetime-local" placeholder="Date" asp-for="Shift.EndTime">
+                        <span asp-validation-for="Shift.EndTime" class="text-danger"></span>
+                        <input type="hidden" asp-for="Shift.FirstName" value="@user.FirstName" /> 
+                        <input type="hidden" asp-for="Shift.LastName" value="@user.LastName" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+       function showAddShiftModal(){
+            $('#addShiftModal').modal('show');
+       }
+    </script>
+}

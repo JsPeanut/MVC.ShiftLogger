@@ -16,3 +16,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.cards{
+    display: flex;
+    justify-content: space-around;
+}
